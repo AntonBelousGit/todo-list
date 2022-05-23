@@ -1,0 +1,400 @@
+{
+	"info": {
+		"_postman_id": "664f2620-3741-4cdd-b52b-14383b3b0ee8",
+		"name": "TODO_LIST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16643962"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/login?email=user2@test.com&password=password",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "user2@test.com"
+						},
+						{
+							"key": "password",
+							"value": "password"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show all tasklist - curent User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|66axQoN9u7GZkIpinnJNxfn55ZA8kWgrGtCT2JTl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todo-list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todo-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show single tasklist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|66axQoN9u7GZkIpinnJNxfn55ZA8kWgrGtCT2JTl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todo-list/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todo-list",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show task -> sub task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|66axQoN9u7GZkIpinnJNxfn55ZA8kWgrGtCT2JTl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todo-list/2/task/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todo-list",
+						"2",
+						"task",
+						""
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New task in todo-list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|66axQoN9u7GZkIpinnJNxfn55ZA8kWgrGtCT2JTl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todo-list/2/task/?title=title&description=description&priority=2&task_id=46",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todo-list",
+						"2",
+						"task",
+						""
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "title"
+						},
+						{
+							"key": "description",
+							"value": "description"
+						},
+						{
+							"key": "priority",
+							"value": "2"
+						},
+						{
+							"key": "task_id",
+							"value": "46"
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update task in todo-list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|66axQoN9u7GZkIpinnJNxfn55ZA8kWgrGtCT2JTl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todo-list/2/task/50/?title=New title 1&description=New description&priority=1&task_id=46&status=done",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todo-list",
+						"2",
+						"task",
+						"50",
+						""
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "New title 1"
+						},
+						{
+							"key": "description",
+							"value": "New description"
+						},
+						{
+							"key": "priority",
+							"value": "1"
+						},
+						{
+							"key": "task_id",
+							"value": "46"
+						},
+						{
+							"key": "status",
+							"value": "done"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete single task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|66axQoN9u7GZkIpinnJNxfn55ZA8kWgrGtCT2JTl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todo-list/2/task/50",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todo-list",
+						"2",
+						"task",
+						"50"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SEARCH",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|66axQoN9u7GZkIpinnJNxfn55ZA8kWgrGtCT2JTl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todo-list/2/search/?without=subtask&priority_between[]=1&priority_between[]=3&priority_at=asc&created_at=desc&completed_at=desc",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todo-list",
+						"2",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "title",
+							"description": "other",
+							"disabled": true
+						},
+						{
+							"key": "without",
+							"value": "subtask",
+							"description": "subtask or disabled"
+						},
+						{
+							"key": "priority",
+							"value": "1",
+							"description": "1,2,3,4,5",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "todo",
+							"description": "todo,done",
+							"disabled": true
+						},
+						{
+							"key": "priority_between[]",
+							"value": "1",
+							"description": "1,2,3,4,5"
+						},
+						{
+							"key": "priority_between[]",
+							"value": "3",
+							"description": "1,2,3,4,5"
+						},
+						{
+							"key": "priority_at",
+							"value": "asc",
+							"description": "desc,asc"
+						},
+						{
+							"key": "created_at",
+							"value": "desc",
+							"description": "desc,asc"
+						},
+						{
+							"key": "completed_at",
+							"value": "desc",
+							"description": "desc,asc"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
