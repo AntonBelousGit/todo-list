@@ -1,8 +1,8 @@
 
-###Постман коллекция находиться в файле 
+### Постман коллекция находиться в файле 
     TODO_LIST.postman_collection.json
 
-###Установка
+### Установка
 
     git clone https://github.com/AntonBelousGit/todo-list
     cd laravel-tasks
@@ -12,6 +12,6 @@
     php artisan migrate --seed
     php artisan serve
 
-###Логинимся под одним из юзеров
+### Логинимся под одним из юзеров
 
     Важно! Незабыть подставить новый Bearer token в Postman
