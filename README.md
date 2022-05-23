@@ -5,7 +5,7 @@
 ### Установка
 
     git clone https://github.com/AntonBelousGit/todo-list
-    cd laravel-tasks
+    cd todo-list
     composer install
     cp .env.example .env
     php artisan key:generate
